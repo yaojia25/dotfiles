@@ -1,0 +1,10 @@
+configuration {
+	display-run: " ";
+    display-drun: "  ";
+    display-window: "  ";
+    drun-display-format: "{icon} {name}";
+	modi: "drun,window,run";
+	font: "Sarasa Mono SC Nerd 14";
+	show-icons: true;
+	theme: "nord";
+}
