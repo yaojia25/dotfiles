@@ -163,7 +163,7 @@ mode "Resize" {
 
 ################################ 程序启动 START #################################
 # Wallpaper
-exec_always --no-startup-id feh --randomize --bg-fill $HOME/Pictures/*
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.png
 # opacity
 exec_always --no-startup-id picom
 # polybar
