@@ -45,7 +45,7 @@ popup_during_fullscreen smart
 
 ################################## 快捷键 START ##################################
 # 开始终端
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 # 关闭焦点窗口
 bindsym $mod+Shift+q kill
 # Rofi 启动快捷键

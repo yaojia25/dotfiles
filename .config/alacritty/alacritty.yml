@@ -1,28 +1,96 @@
-#设置字体
-font:
-  normal:
-    family: Sarasa Mono SC Nerd
-    style: Regular
-
-  bold:
-    family: Sarasa Mono SC Nerd
-    style: Bold
-
-  italic:
-    family: Sarasa Mono SC Nerd
-    style: Italic
-  size: 13
-
-#设置背景透明度
+# 环境变量
+env:
+  # - alacritty
+  # - xterm-256colo
+  TERM: alacritty
+  
+# 窗口
 window:
   padding:
     x: 5
     y: 5
+  
+  # 动态填充
+  dynamic_padding: true
+
+  # 窗口装饰
+  #  - full: Borders and title bar
+  #  - none: Neither borders nor title bar
+  decorations: full
+  
+  # 背景不透明度
   opacity: 0.25
 
+  # 窗口标题
+  title: Alacritty
+
+  # GTK 主题变化 (Linux/BSD only)
+  # - None （default）使用默认的主题色
+  # - light 明亮主题
+  # - dark  黑暗主题
+  gtk_theme_variant: None
+
+#scrolling:
+  # 缓冲区刻划动的行数，设置为 0 时禁用缓冲区
+  #history: 10000
+
+  # 划动距离
+  #multiplier: 3
+
+#设置字体
+font:
+  # 常规
+  normal:
+    family: Sarasa Mono SC Nerd
+    style: Regular
+  # 粗体
+  bold:
+    family: Sarasa Mono SC Nerd
+    style: Bold
+  # 斜体
+  italic:
+    family: Sarasa Mono SC Nerd
+    style: Italic
+
+  # 字体大小
+  size: 14
+
+
 selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: true 
-  
+
+cursor:
+  style: 
+    # 光标风格
+    # - ▇ Block
+    # - _ Underline
+    # - | Beam
+    shape: Underline
+
+    # 光标闪烁
+    # - Never: 永远禁止闪烁
+    # - Off: 默认关闭闪烁
+    # - On: 默认启用闪烁
+    # - Always: 强制闪烁
+    #blinking: Off
+
+# 自动重载配置文件
+live_config_reload: true
+
+# 鼠标指针
+mouse:
+  # 输入时隐藏鼠标
+  hide_when_typing: true
+
+# 鼠标按键
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+# 键盘按键
+key_bindings:
+  - { key: V, mods: Control|Shift, mode: ~Vi, action: Paste            }
+
 #主题
 # Colors (Dracula)
 colors:
