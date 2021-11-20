@@ -45,7 +45,7 @@ popup_during_fullscreen smart
 
 ################################## 快捷键 START ##################################
 # 开始终端
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec xfce4-terminal
 # 关闭焦点窗口
 bindsym $mod+Shift+q kill
 # Rofi 启动快捷键
@@ -169,7 +169,7 @@ exec_always --no-startup-id picom
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # fcitx5
-exec --no-startup-id fcitx5 -d
+exec_always --no-startup-id fcitx5 -d
 # 网络管理GUI
 exec --no-startup-id nm-applet
 ################################ 程序启动 END ###################################
@@ -178,8 +178,15 @@ exec --no-startup-id nm-applet
 
 ################################## 窗口配置 START ################################
 for_window [title="Fcitx 配置"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="feh"] floating enable
+
+
 
 assign [class="Alacritty"] 1
-assign [class="microsoft-edge-dev"] 2
-assign [class="code"] 3
+assign [class="Microsoft-edge-dev"] 2
+assign [class="firefox"] 2
+assign [class="Code"] 3
+assign [class="Thunar"] 4
+
 ################################## 窗口配置 END ##################################
