@@ -34,7 +34,7 @@ smart_gaps on
 # 鼠标右键+mod键改变浮动窗口大小
 floating_modifier $mod
 # 浮动窗口最大
-floating_maximum_size 1200 x 800
+floating_maximum_size 1920 x 1080
 # 窗口焦点不跟随鼠标
 focus_follows_mouse no
 # 当全屏时弹出窗口的表现 
@@ -180,6 +180,7 @@ exec --no-startup-id nm-applet
 for_window [title="Fcitx 配置"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="feh"] floating enable
+for_window [class="Arandr"] floating enable
 
 
 
