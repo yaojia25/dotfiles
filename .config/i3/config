@@ -5,7 +5,7 @@ set $mod Mod4
 set $alt Mod1
 set $ctrl Control
 # 字体
-font pango:Sarasa Gothic SC, Sarasa Mono SC Nerd 12
+font pango:Sarasa Gothic SC 12
 # 重载配置文件
 bindsym $mod+Shift+c reload
 # 重启 i3
@@ -29,7 +29,7 @@ default_floating_border pixel 2
 hide_edge_borders smart
 # 窗口间距
 gaps inner 6
-gaps outer 4
+gaps outer 2
 # smart_gaps on
 # 鼠标右键+mod键改变浮动窗口大小
 floating_modifier $mod
@@ -172,6 +172,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id fcitx5 -d
 # 网络管理GUI
 exec --no-startup-id nm-applet
+
+exec_always --no-startup-id dunst
 ################################ 程序启动 END ###################################
 
 

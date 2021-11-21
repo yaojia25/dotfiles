@@ -12,9 +12,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 eval $(/usr/bin/gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
-mkdir -p "$HOME"/.local/share/keyrings
+#mkdir -p "$HOME"/.local/share/keyrings
 
 xrandr --output Virtual-1 --mode 2560x1440
-xsetroot -cursor_name left_ptr
 
 exec i3
