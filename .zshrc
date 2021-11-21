@@ -37,13 +37,10 @@ alias fuckgfw2="export http_proxy=socks5://127.0.0.1:1089 https_proxy=socks5://1
 alias unfuckgfw="unset http_proxy https_proxy && echo '- Welcome inside. -'"
 alias vim='nvim'
 alias sudo vim='sudo nvim'
-alias nr='nvim ~/.config/nvim/init.vim'
-alias snr='source ~/.config/nvim/init.vim'
-alias zr='nvim ~/.zshrc'
-alias szr="source ~/.zshrc"
 alias ch='cd ~'
 alias clash='cd ~/.clash/ && ./clash -d .'
 alias rg='ranger'
+alias lg='lazygit'
 #WSL alias
 alias cdc='cd /mnt/c/'
 alias cdu='cd /c/Users/yaojia'
