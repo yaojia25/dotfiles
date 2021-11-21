@@ -89,6 +89,10 @@ mouse_bindings:
 # 键盘按键
 key_bindings:
   - { key: V, mods: Control|Shift, mode: ~Vi, action: Paste }
+  - { key: Home,                          chars: "\x1bOH",   mode: AppCursor   }
+  - { key: Home,                          chars: "\x1b[H",   mode: ~AppCursor  }
+  - { key: End,                           chars: "\x1bOF",   mode: AppCursor   }
+  - { key: End,                           chars: "\x1b[F",   mode: ~AppCursor  }
 
 #主题
 # Colors (Dracula)

@@ -28,13 +28,13 @@ default_floating_border pixel 2
 # 隐藏靠近屏幕边缘的边框
 hide_edge_borders smart
 # 窗口间距
-gaps inner 5
-gaps outer 5
-smart_gaps on
+gaps inner 6
+gaps outer 4
+# smart_gaps on
 # 鼠标右键+mod键改变浮动窗口大小
 floating_modifier $mod
 # 浮动窗口最大
-floating_maximum_size 1920 x 1080
+#floating_maximum_size 1920 x 1080
 # 窗口焦点不跟随鼠标
 focus_follows_mouse no
 # 当全屏时弹出窗口的表现 
