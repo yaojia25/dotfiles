@@ -184,6 +184,7 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="qt5ct"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
 
 
 

@@ -2,7 +2,7 @@
 xrdb -merge ~/.Xresources
 
 export LANG=zh_CN.UTF-8
-export QT_SCALE_FACTOR=1.25
+#export QT_SCALE_FACTOR=1.25
 export QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_STYLE_OVERRIDE=gtk2
 #XDG_CURRENT_DESKTOP=GNOME
