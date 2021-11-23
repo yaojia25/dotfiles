@@ -11,7 +11,7 @@ bindsym $mod+Shift+c reload
 # 重启 i3
 bindsym $mod+Shift+r restart
 # 推出 i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 ################################### 全局设置 END #################################
 
@@ -20,13 +20,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 ################################ 窗口样式 START ##################################
 # 去除标题栏
 exec --no-startup-id dex --autostart --environment i3
-# 窗口边框
-#new_window none
-default_border none
-#new_float normal
-default_floating_border pixel 2
+# 新窗口的默认边框样式 (默认 normal)
+# - normal|none|pixel|pixel <px>
+default_border pixel 1
+default_floating_border pixel 1
 # 隐藏靠近屏幕边缘的边框
-hide_edge_borders smart
+# - none|vertical|horizontal|both|smart
+hide_edge_borders none
 # 窗口间距
 gaps inner 6
 gaps outer 2
@@ -40,6 +40,19 @@ focus_follows_mouse no
 # 当全屏时弹出窗口的表现 
 popup_during_fullscreen smart
 ################################## 窗口样式 END ##################################
+
+
+
+################################ 颜色 START ##################################
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #42A5F5 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+################################## 颜色 END ##################################
 
 
 
@@ -90,8 +103,14 @@ bindsym $mod+Shift+space floating toggle
 # 改变焦点窗口是 平铺/浮动
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# 聚焦到父窗口
 bindsym $mod+a focus parent
+
+# 将聚焦窗口移动到 暂存簿
+bindsym $mod+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+equal scratchpad show
 ################################### 快捷键 END ####################################
 
 
@@ -121,6 +140,9 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+# 自动返回之前的工作区
+workspace_auto_back_and_forth yes
 
 # 将焦点窗口移动到对应工作区
 bindsym $mod+Shift+1 move container to workspace number $ws1

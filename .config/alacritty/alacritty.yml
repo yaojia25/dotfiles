@@ -63,7 +63,7 @@ font:
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-  save_to_clipboard: true 
+  save_to_clipboard: false
 
 cursor:
   style: 
@@ -90,15 +90,15 @@ mouse:
 
 # 鼠标按键
 mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+  - { mouse: Middle, action: Copy }
+  - { mouse: Right, action: PasteSelection }
 
 # 键盘按键
 key_bindings:
-  - { key: V, mods: Control|Shift, mode: ~Vi, action: Paste }
-  - { key: Home, chars: "\x1bOH", mode: AppCursor   }
-  - { key: Home, chars: "\x1b[H", mode: ~AppCursor  }
-  - { key: End, chars: "\x1bOF", mode: AppCursor   }
-  - { key: End,  chars: "\x1b[F", mode: ~AppCursor  }
+  - { key: V,         mods: Control|Shift, mode: ~Vi,        action: Paste }
+  - { key: W,         mods: "Control",     mode: ~AppCursor, action: Quit }
+  - { key: Home,                           mode: ~Vi,        action: ScrollToTop,   }
+  - { key: End,                            mode: ~Vi,        action: ScrollToBottom }
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -115,7 +115,7 @@ colors:
     cursor: CellForeground
   vi_mode_cursor:
     text: CellBackground
-    cursor: CellForeground
+    cursor: '#ffffff'
   search:
     matches:
       foreground: '#44475a'
