@@ -15,5 +15,5 @@ export SSH_AUTH_SOCK
 #mkdir -p "$HOME"/.local/share/keyrings
 
 xrandr --output Virtual-1 --mode 2560x1440
-
-exec i3
+sxhkd &
+exec bspwm

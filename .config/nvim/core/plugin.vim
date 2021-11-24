@@ -13,16 +13,6 @@ if !exists('g:airline_symbols')
 let g:airline_symbols = {}
 endif
 
-"Dashboard设置
-let g:dashboard_custom_header = [
-			\ '',
-			\ '     _ ___    _ __   ____     _____ __  __  ',
-            \ '    | |_ _|  / \\ \ / /\ \   / /_ _|  \/  | ',
-            \ ' _  | || |  / _ \\ V /  \ \ / / | || |\/| | ',
-            \ '| |_| || | / ___ \| |    \ V /  | || |  | | ',
-            \ ' \___/|___/_/   \_\_|     \_/  |___|_|  |_| ',
-			\ '',
-			\ ]
 " Ranger 设置
 let g:ranger_map_keys = 0
-
+" startify 配置
