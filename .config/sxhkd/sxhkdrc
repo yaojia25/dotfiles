@@ -46,17 +46,17 @@ super + g
 super + f
 	bspc node --state \~fullscreen
 
-# 开启和关闭 <最大化> 显示
+# 开启和关闭 <单片> 显示
 super + m
-	bspc node --state \~pseudo_tiled
+	bspc desktop -l next
 
 # 开启和关闭 <悬浮> 显示
 super + @space
 	bspc node --state \~floating
 
-# 设置平铺布局（state,-t）
-super + t
-	bspc node -t tiled
+# 循环平铺和伪平铺
+super + {_,shift + }t
+	bspc node -t {tiled,pseudo_tiled}
 
 # 节点标记/锁定/便签/私有
 super + ctrl + {m,x,y,z}
@@ -91,7 +91,6 @@ alt + grave
 	bspc node -f last
 
 # rotate the whole desktop
-
 super + shift + r
 	bspc node @/ -R 90
 # rotate the parent of current focused
@@ -112,6 +111,21 @@ super + a
         else \
                 bspc node -f last.floating.local; \
         fi
+
+# 预选方向
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+# 按比例预选
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+# 取消预选的焦点窗口
+super + ctrl + space
+	bspc node -p cancel
+# 取消预选焦点桌面
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+
 #################################################################
 # BSPWM 工作区
 #################################################################
@@ -137,39 +151,12 @@ super + grave
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-
-
-
-
-
-
 # focus the older or newer node in the focus history
 super + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-
-
-#
-# preselect
-#
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize

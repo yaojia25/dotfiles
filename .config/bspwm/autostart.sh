@@ -1,3 +1,5 @@
+sxhkd &
+
 # Wallpaper
 feh --bg-fill $HOME/Pictures/wallpaper.png &
 
