@@ -59,7 +59,7 @@ font:
     style: Italic
 
   # 字体大小
-  size: 14
+  size: 12
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -138,7 +138,7 @@ colors:
     background: None
   selection:
     text: CellForeground
-    background: '#44475a'
+    background: '#6C77BB'
   normal:
     black: '#21222c'
     red: '#ff5555'
