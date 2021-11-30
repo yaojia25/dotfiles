@@ -24,7 +24,7 @@ HISTFILE=~/.zsh_history
 export TERM=xterm-256color
 export EDITOR=nvim
 export DIFFPROG=nvim
-
+export GPG_TTY=$(tty)
 #########################################################
 #                   zsh alias 列表                      #
 #########################################################
@@ -32,11 +32,6 @@ export DIFFPROG=nvim
 # Example aliases
 alias cls="clear"
 alias nf="neofetch"
-alias fuckgfw1="export http_proxy=socks5://127.0.0.1:7891 https_proxy=socks5://127.0.0.1:7891 && echo '- You are out with clash! -'"
-alias fuckgfw2="export http_proxy=socks5://127.0.0.1:1089 https_proxy=socks5://127.0.0.1:1089 && echo '- You are out with v2ray! -'"
-alias unfuckgfw="unset http_proxy https_proxy && echo '- Welcome inside. -'"
-alias vim='nvim'
-alias sudo vim='sudo nvim'
 alias ch='cd ~'
 alias clash='cd ~/.clash/ && ./clash -d .'
 alias rg='ranger'

@@ -91,7 +91,7 @@ mouse:
 # 鼠标按键
 mouse_bindings:
   - { mouse: Middle, action: Copy }
-  - { mouse: Right, action: PasteSelection }
+  - { mouse: Right, action: Paste }
 
 # 键盘按键
 key_bindings:
