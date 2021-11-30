@@ -4,8 +4,6 @@
 #  / /_ ___) |  _  |  _ <| |___ 
 # /____|____/|_| |_|_| \_\\____|
 
-#启动 zplug
-source ~/.zplug/init.zsh
 
 #########################################################
 #                   zplug 插件列表                      #
@@ -44,45 +42,42 @@ alias qqwine='env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" deepin-wine'
 alias qqmwine='env WINEPREFIX="$HOME/.deepinwine/Deepin-QQMusic" deepin-wine'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-#########################################################
-#                   zplug 插件列表                      #
-#########################################################
-
-# powerlevel10k 主题
-zplug "romkatv/powerlevel10k", as:theme, depth:1
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zdharma-continuum/fast-syntax-highlighting"
-
-# oh-my-zsh 插件
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
 
 
 #########################################################
-#                   zplug 插件设置                      #
+#                   zinit 插件列表                      #
 #########################################################
 
+zinit wait="1" lucid for \
+    OMZL::git.zsh \
+    OMZP::sudo/sudo.plugin.zsh \
+    OMZP::git/git.plugin.zsh
+# 提示
+zinit ice lucid wait='0' atload='_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+# 高亮
+zinit ice lucid wait='0' atinit='zpcompinit'
+zinit light zdharma-continuum/fast-syntax-highlighting
+# 自动补全
+zinit ice lucid wait='0'
+zinit light zsh-users/zsh-completions
+# 主题
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 # powerlevel10k 主题设置
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#########################################################
-#                   zplug 插件加载                     #
-#########################################################
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
 fi
 
-# Then, source plugins and add commands to $PATH
-zplug load
-
-
-
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
