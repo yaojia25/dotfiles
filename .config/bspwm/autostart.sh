@@ -1,5 +1,5 @@
 sxhkd &
-
+wmname LG3D
 # Wallpaper
 feh --bg-fill $HOME/Pictures/wallpaper.jpg &
 
