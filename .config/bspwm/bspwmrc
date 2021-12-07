@@ -2,7 +2,7 @@
 
 # 程序启动
 $HOME/.config/bspwm/autostart.sh
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name Bibata-Modern-Classic &
 #################################
 #       Global Settings
 # 所有布尔值默认为false，除非特殊说明
@@ -69,7 +69,7 @@ bspc rule -a Thunar state=floating follow=on
 bspc rule -a 画中画 state=floating
 bspc rule -a Lightdm-gtk-greeter-settings state=floating
 bspc rule -a FinalShell state=floating
-bspc rule -a (win0) flag=hidden
+#bspc rule -a (win0) flag=hidden
 
 # 平铺窗口应用列表
 bspc rule -a Gnome-disks state=tiled

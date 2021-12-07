@@ -1,5 +1,6 @@
 sxhkd &
 wmname LG3D
+xsetroot -cursor_name Bibata-Modern-Classic &
 # Wallpaper
 feh --bg-fill $HOME/Pictures/wallpaper.jpg &
 
@@ -7,7 +8,7 @@ feh --bg-fill $HOME/Pictures/wallpaper.jpg &
 picom &
 
 # polybar
-~/.config/polybar/launch.sh &
+bash $HOME/.config/polybar/launch.sh &
 
 # fcitx5
 fcitx5 -d &
