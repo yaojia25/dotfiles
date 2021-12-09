@@ -48,7 +48,7 @@ super + f
 
 # 开启和关闭 <单片> 显示
 super + m
-	bspc desktop -l next
+	bspc desktop --layout next
 
 # 开启和关闭 <悬浮> 显示
 super + @space
@@ -59,7 +59,7 @@ super + {_,shift + }t
 	bspc node -t {tiled,pseudo_tiled}
 
 # 节点标记/锁定/便签/私有
-super + ctrl + {m,x,y,z}
+super + alt + {m,n,s,p}
 	bspc node -g {marked,locked,sticky,private}
 
 
@@ -71,12 +71,6 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
-
-# 移动悬浮窗口
-super + {h,j,k,l}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
-super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # 移动焦点窗口到指定工作区
 super + shift + {1-9,0}
@@ -115,15 +109,9 @@ super + a
 # 预选方向
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
-# 按比例预选
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
 # 取消预选的焦点窗口
 super + ctrl + space
 	bspc node -p cancel
-# 取消预选焦点桌面
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 
 #################################################################
