@@ -45,7 +45,7 @@ bspc config border_width         2
 
 
 # Single monitor
-bspc monitor -d        
+bspc monitor -d       
 
 
 # 全屏窗口应用列表
@@ -57,16 +57,19 @@ bspc rule -a VirtualBox Machine state=fullscreen
 #bspc rule -a Gimp state=fullscreen
 
 
+Xaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
+Yaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f2)
 # 浮动窗口应用列表
 bspc rule -a Arandr state=floating
 bspc rule -a fcitx5-config-qt state=floating
 bspc rule -a Lxappearance state=floating
 bspc rule -a qt5ct state=floating
-bspc rule -a feh state=floating
+bspc rule -a feh state=floating rectangle=`expr $Xaxis / 3`x`expr $Yaxis / 3`+`expr \
+    $Xaxis \* 2 / 3 - 2 \* 2`+`expr $Yaxis \* 2 / 3 - 2 \* 2`
 bspc rule -a Toolkit state=floating
 bspc rule -a Nm-connection-editor state=floating
 bspc rule -a Thunar state=floating follow=on
-bspc rule -a 画中画 state=floating
+bspc rule -a 画中画 sticky=on state=floating
 bspc rule -a Lightdm-gtk-greeter-settings state=floating
 bspc rule -a FinalShell state=floating
 #bspc rule -a (win0) flag=hidden

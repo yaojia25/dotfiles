@@ -1,8 +1,8 @@
 sxhkd &
-wmname LG3D
+#wmname LG3D
 xsetroot -cursor_name Bibata-Modern-Classic &
 # Wallpaper
-feh --bg-fill $HOME/Pictures/wallpaper.jpg &
+feh --bg-fill $HOME/Pictures/wallpaper.png &
 
 # 渲染器
 picom &
