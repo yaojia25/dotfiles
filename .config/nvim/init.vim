@@ -1,18 +1,16 @@
-"  _   ___     _____ __  __ ____   ____
-" | \ | \ \   / /_ _|  \/  |  _ \ / ___|
-" |  \| |\ \ / / | || |\/| | |_) | |
-" | |\  | \ V /  | || |  | |  _ <| |___
-" |_| \_|  \_/  |___|_|  |_|_| \_\\____|
+lua require('options')
+lua require('plugins')
+lua require('keymaps')
+lua require('theme')
 
-source ~/.config/nvim/core/core.vim
+lua require('plugin-config/galaxyline')
+lua require('plugin-config/nvim-tree')
+lua require('plugin-config/bufferline')
+lua require('plugin-config/nvim-treesitter')
+lua require('plugin-config/dashboard')
+lua require('lsp/setup')
 
-autocmd InsertLeave * :silent !fcitx5-remote -c " 退出插入模式时禁用输入法
-autocmd BufCreate *  :silent !fcitx5-remote -c " 创建 Buf 时禁用输入法
-autocmd BufEnter *  :silent !fcitx5-remote -c " 进入 Buf 时禁用输入法
-autocmd BufLeave *  :silent !fcitx5-remote -c " 离开 Buf 时禁用输入法
-
-
-
-
-
-
+autocmd InsertLeave * :silent !fcitx5-remote -c 
+autocmd BufCreate *  :silent !fcitx5-remote -c 
+autocmd BufEnter *  :silent !fcitx5-remote -c 
+autocmd BufLeave *  :silent !fcitx5-remote -c 
