@@ -1,1 +1,1 @@
-require'lspconfig'.python.setup{}
+require'lspconfig'.pylsp.setup{}

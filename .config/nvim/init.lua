@@ -1,0 +1,21 @@
+require('options')
+require('plugins')
+require('keymaps')
+require('theme')
+
+require('config.galaxyline')
+require('config.nvim-tree')
+require('config.bufferline')
+require('config.nvim-treesitter')
+require('config.dashboard')
+require('config.which-key')
+require('config.autopairs')
+require('config.comment')
+require('lsp/setup')
+require('lsp/nvim-cmp')
+
+vim.api.nvim_command('autocmd InsertLeave * :silent !fcitx5-remote -c')
+vim.api.nvim_command('autocmd BufCreate * :silent !fcitx5-remote -c')
+vim.api.nvim_command('autocmd BufEnter * :silent !fcitx5-remote -c')
+vim.api.nvim_command('autocmd BufLeave * :silent !fcitx5-remote -c')
+
