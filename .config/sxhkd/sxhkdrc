@@ -77,7 +77,7 @@ super + shift + {1-9,0}
 	bspc node -d '^{1-9,10}'
 
 # 在当前桌面循环切换窗口焦点
-alt + {_,shift + }Tab
+super + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
 # 切换焦点到上一个窗口
@@ -120,10 +120,6 @@ super + ctrl + space
 # 切换到指定的工作区
 super + {1-9,0}
 	bspc desktop -f '^{1-9,10}'
-
-# 循环切换桌面
-super + {_,shift + }Tab
-	bspc desktop -f {next,prev}.local
 
 # 切换到上一个桌面
 super + grave

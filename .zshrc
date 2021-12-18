@@ -37,13 +37,10 @@ alias lg='lazygit'
 #WSL alias
 alias cdc='cd /mnt/c/'
 alias cdu='cd /c/Users/yaojia'
-alias timwine='env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" deepin-wine'
-alias qqwine='env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" deepin-wine'
-alias qqmwine='env WINEPREFIX="$HOME/.deepinwine/Deepin-QQMusic" deepin-wine'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-
+alias venv='python -m venv .venv'
 
 
 ### Added by Zinit's installer
