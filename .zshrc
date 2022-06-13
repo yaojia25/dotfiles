@@ -1,4 +1,4 @@
-#  _________  _   _ ____   ____ 
+#  ________  _   _ ____   ____ 
 # |__  / ___|| | | |  _ \ / ___|
 #   / /\___ \| |_| | |_) | |    
 #  / /_ ___) |  _  |  _ <| |___ 
@@ -23,6 +23,7 @@ export TERM=xterm-256color
 export EDITOR=nvim
 export DIFFPROG=nvim
 export GPG_TTY=$(tty)
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 #########################################################
 #                   zsh alias 列表                      #
 #########################################################
@@ -34,6 +35,7 @@ alias ch='cd ~'
 alias clash='cd ~/.clash/ && ./clash -d .'
 alias rg='ranger'
 alias lg='lazygit'
+alias lsl='ls -la'
 #WSL alias
 alias cdc='cd /mnt/c/'
 alias cdu='cd /c/Users/yaojia'
@@ -75,8 +77,4 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice lucid wait='0'
 zinit light zsh-users/zsh-completions
 # 主题
-zinit ice depth=1
-zinit light romkatv/powerlevel10k
-# powerlevel10k 主题设置
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"
