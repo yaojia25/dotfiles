@@ -65,20 +65,16 @@ packer.startup({
     -- Comment
     use("numToStr/Comment.nvim")
     use("JoosepAlviste/nvim-ts-context-commentstring")
-    -- -- galaxyline 状态栏
-    -- use {
-    --     'glepnir/galaxyline.nvim',
-    --       branch = 'main',
-    --       requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    -- }
-    -- use {
-	  --   "SmiteshP/nvim-gps",
-	  --   requires = "nvim-treesitter/nvim-treesitter"
-    -- }
-    -- use { 
-    --     "rcarriga/nvim-dap-ui", 
-    --     requires = {"mfussenegger/nvim-dap"} 
-    -- }
+    -- telescope
+    use({
+      "nvim-telescope/telescope.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+    })
+    -- telescope extensions
+    use("LinArcX/telescope-env.nvim")
+    use("nvim-telescope/telescope-ui-select.nvim")
+    -- autopairs
+    use ("windwp/nvim-autopairs")
 
     if packer_bootstrap then
       require('packer').sync()

@@ -15,6 +15,8 @@ require('config.lualine')
 require('config.nvim-treesitter')
 require("config.indent-blankline")
 require('config.comment')
+require('config.telescope')
+require('config.nvim-autopairs')
 -- require('lsp/setup')
 -- require('lsp/nvim-cmp')
 
