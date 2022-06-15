@@ -14,11 +14,11 @@ vim.g.maplocalleader = " "
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 
+-- F键快捷操作
 map("n", "<F2>", ":source ~/.config/nvim/init.lua<CR>", opt)
 map("n", "<F3>", ":PackerSync<CR>", opt)
 map("n", "<F4>", ":LspInstallInfo<CR>", opt)
 map("n", "<F5>", ":!python3 %<CR>" ,opt)
-
 
 -- 移动
 map("n", "J", "5j", opt)
@@ -32,15 +32,21 @@ map('n','<C-q>',':q<CR>',opt)
 map('v','C-c',':"+y',opt)
 map('v','C-x',':"+d',opt)
 map('v','C-v',':"+p',opt)
+-- 在visual模式里粘贴不要复制
+map('v','p','"_dp',opt)
 
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
+-- 上下移动选中文本
+map("v", "J", ":move '>+1<CR>gv-gv", opt)
+map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- magic search
-map("n", "/", "/\\v", opt)
-map("v", "/", "/\\v", opt)
+map("n", "/", "/\\v", { noremap = true, silent = false })
+map("v", "/", "/\\v", { noremap = true, silent = false })
+
 
 ------------------------------------------------------------------
 -- windows 分屏快捷键
@@ -142,7 +148,7 @@ pluginKeys.telescopeList = {
 }
 
 -- 代码注释插件
--- see ./lua/plugin-config/comment.lua
+-- see ./lua/config/comment.lua
 pluginKeys.comment = {
   -- normal 模式
   toggler = {
