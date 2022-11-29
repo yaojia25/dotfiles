@@ -24,7 +24,7 @@ map("n", "<F5>", ":!python3 %<CR>" ,opt)
 map("n", "J", "5j", opt)
 map("n", "K", "5k", opt)
 
--- 保存,推出
+-- 保存,退出
 map('i','<C-s>','<ESC>:w!<CR>i',opt)
 map('n','<C-s>',':w<CR>',opt)
 map('n','<C-q>',':q<CR>',opt)
@@ -82,37 +82,7 @@ map("n", "s=", "<C-w>=", opt)
 local pluginKeys = {}
 
 -- nvimTree
-map('n', '<LEADER>f', ':NvimTreeToggle<CR>', opt)
--- 列表快捷键
-pluginKeys.nvimTreeList = { -- 打开文件或文件夹
-  { key = { "o", "<2-LeftMouse>" }, action = "edit" },
-  { key = "<CR>", action = "system_open" },
-  -- v分屏打开文件
-  { key = "v", action = "vsplit" },
-  -- h分屏打开文件
-  { key = "h", action = "split" },
-  -- Ignore (node_modules)
-  { key = "i", action = "toggle_ignored" },
-  -- Hide (dotfiles)
-  { key = ".", action = "toggle_dotfiles" },
-  { key = "R", action = "refresh" },
-  -- 文件操作
-  { key = "a", action = "create" },
-  { key = "d", action = "remove" },
-  { key = "r", action = "rename" },
-  { key = "x", action = "cut" },
-  { key = "c", action = "copy" },
-  { key = "p", action = "paste" },
-  { key = "y", action = "copy_name" },
-  { key = "Y", action = "copy_path" },
-  { key = "gy", action = "copy_absolute_path" },
-  { key = "I", action = "toggle_file_info" },
-  { key = "n", action = "tabnew" },
-  -- 进入下一级
-  { key = { "]" }, action = "cd" },
-  -- 进入上一级
-  { key = { "[" }, action = "dir_up" },
-}
+map('n', '<LEADER>f', ':Lf<CR>', opt)
 -- bufferline 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)

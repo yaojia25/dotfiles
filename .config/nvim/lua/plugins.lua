@@ -36,15 +36,8 @@ packer.startup({
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- colorsheme 主题
-    use("ful1e5/onedark.nvim")
+    use("navarasu/onedark.nvim")
   
-    -------------------------- plugins -------------------------------------------
-    -- nvim-tree  文件列表
-    use({
-      "kyazdani42/nvim-tree.lua",
-      requires = "kyazdani42/nvim-web-devicons",
-    })
-    -- bufferline  buffer栏
     use({
       "akinsho/bufferline.nvim",
       requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" },
@@ -75,7 +68,10 @@ packer.startup({
     use("nvim-telescope/telescope-ui-select.nvim")
     -- autopairs
     use ("windwp/nvim-autopairs")
-
+    use({
+      "ptzz/lf.vim",
+      requires = { "voldikss/vim-floaterm" },
+    })
     if packer_bootstrap then
       require('packer').sync()
     end

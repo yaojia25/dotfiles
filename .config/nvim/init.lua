@@ -17,12 +17,9 @@ require("config.indent-blankline")
 require('config.comment')
 require('config.telescope')
 require('config.nvim-autopairs')
--- require('lsp/setup')
--- require('lsp/nvim-cmp')
 
 -- 复制到windows剪贴板
-require('utils.fix-yank')
-
+vim.api.nvim_command("autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif")
 vim.api.nvim_command('autocmd InsertLeave * :silent !fcitx5-remote -c')
 vim.api.nvim_command('autocmd BufCreate * :silent !fcitx5-remote -c')
 vim.api.nvim_command('autocmd BufEnter * :silent !fcitx5-remote -c')
